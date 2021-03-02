@@ -20,21 +20,18 @@ class TradeCreateReq(BaseModel):
 
 class TradeResp(BaseModel):
     num: int
-    uid : int
-    title : str
+    uid: int
+    title: str
+
 
 class Trade(Base):
     __tablename__ = "trades"
     uid = Column(Integer, primary_key=True)
     user_trade_num = Column(Integer, primary_key=True)
     title = Column(String)
-    
+
     def resp(self) -> TradeResp:
-        return TradeResp(
-                num = self.user_trade_num,
-                uid = self.uid,
-                title = self.title
-                )
+        return TradeResp(num=self.user_trade_num, uid=self.uid, title=self.title)
 
     def dict(self):
         return {

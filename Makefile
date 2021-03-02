@@ -8,4 +8,5 @@ init:
 
 freeze:
 	$(env)pip freeze > requirements.txt
-	
+lint:
+	$(env)black .

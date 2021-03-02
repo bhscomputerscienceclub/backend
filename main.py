@@ -6,7 +6,8 @@ from fastapi_sqlalchemy import (
     db,
 )  # an object to provide global access to a database session
 from db import (
-    Session,)
+    Session,
+)
 from db.trade import (
     Trade,
     TradeResp,
@@ -35,7 +36,7 @@ def read_item(trade: TradeCreateReq, user_id: int):
     session.add(trade)
     session.commit()
     session.close()
-    return trade.resp() 
+    return trade.resp()
 
 
 @app.post("/upload")
