@@ -2,7 +2,7 @@ env = .venv/bin/
 debug:
 	.venv/bin/uvicorn main:app --reload
 init:
-	python -m venv .env
+	python -m venv .venv
 	$(env)pip install -r requirements.txt
 	$(env)pip install --upgrade wheel pip
 
