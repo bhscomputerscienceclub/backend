@@ -35,8 +35,9 @@ def read_item(trade: TradeCreateReq, user_id: int):
     session = Session()
     session.add(trade)
     session.commit()
+    ret = trade.resp()
     session.close()
-    return trade.resp()
+    return ret
 
 
 @app.post("/upload")

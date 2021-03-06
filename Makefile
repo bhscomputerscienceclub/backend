@@ -2,11 +2,12 @@ env = .venv/bin/
 debug:
 	.venv/bin/uvicorn main:app --reload
 init:
-	python -m venv .venv
-	$(env)pip install -r requirements.txt
-	$(env)pip install --upgrade wheel pip
+	python3 -m venv .venv
+	$(env)pip3 install --upgrade wheel pip
+	$(env)pip3 install -r requirements.txt
+
 
 freeze:
-	$(env)pip freeze > requirements.txt
+	$(env)pip3 freeze > requirements.txt
 lint:
 	$(env)black .
